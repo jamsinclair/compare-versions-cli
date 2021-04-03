@@ -1,54 +1,33 @@
-# node-cli-boilerplate
+# compare-versions-cli
 
-> Boilerplate to kickstart creating a Node.js command-line tool
-
-This is what I use for [my own command-line tools](https://www.npmjs.com/~sindresorhus).
-
-Also check out [`node-module-boilerplate`](https://github.com/sindresorhus/node-module-boilerplate).
-
-## Getting started
-
-**Click the "Use this template" button.**
-
-Alternatively, create a new directory and then run:
-
-```
-$ curl -fsSL https://github.com/sindresorhus/node-cli-boilerplate/archive/main.tar.gz | tar -xz --strip-components=1
-```
-
-There's also a [Yeoman generator](https://github.com/sindresorhus/generator-nm).
-
-
----
-
-**Remove everything from here and above**
-
----
-
-# unicorn-fun-cli
-
-> My awesome command-line tool
+> Small cli wrapper around compare-versions module
 
 ## Install
 
 ```
-$ npm install --global unicorn-fun-cli
+$ npm install --global compare-versions-cli
 ```
 
 ## Usage
 
 ```
-$ unicorn-fun --help
+Usage
+  $ compare-versions-cli versionA versionB
 
-  Usage
-    $ unicorn-fun [input]
+Options
+  --help     Shows this help prompt
 
-  Options
-    --postfix  Lorem ipsum  [Default: rainbows]
+Examples
+  $ compare-versions-cli v1.2.2 v1.1.1
+  1
+  $ compare-versions-cli v1.1.1 v1.2.2
+  -1
+  $ compare-versions-cli v1.1.1 v1.1.1
+  0
+```
 
-  Examples
-    $ cli-name
-    unicorns & rainbows
-    $ cli-name ponies
-    ponies & rainbows
+For quick use anywhere on the command-line
+```
+$ npx compare-versions-cli v1.2.2 v1.1.1
+1
 ```
